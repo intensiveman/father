@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.user.mapper.FundNvlMapper">
+  <resultMap id="BaseResultMap" type="com.example.user.model.FundNvl">
+    <!--@mbg.generated-->
+    <!--@Table fund_nvl-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="fund" jdbcType="VARCHAR" property="fund" />
+    <result column="NVL" jdbcType="VARCHAR" property="nvl" />
+    <result column="date" jdbcType="DATE" property="date" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, fund, NVL, `date`
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from fund_nvl
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from fund_nvl
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.example.user.model.FundNvl" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into fund_nvl (fund, NVL, `date`)
+    values (#{fund,jdbcType=VARCHAR}, #{nvl,jdbcType=VARCHAR}, #{date,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.example.user.model.FundNvl" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into fund_nvl
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="fund != null">
+        fund,
+      </if>
+      <if test="nvl != null">
+        NVL,
+      </if>
+      <if test="date != null">
+        `date`,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="fund != null">
+        #{fund,jdbcType=VARCHAR},
+      </if>
+      <if test="nvl != null">
+        #{nvl,jdbcType=VARCHAR},
+      </if>
+      <if test="date != null">
+        #{date,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.user.model.FundNvl">
+    <!--@mbg.generated-->
+    update fund_nvl
+    <set>
+      <if test="fund != null">
+        fund = #{fund,jdbcType=VARCHAR},
+      </if>
+      <if test="nvl != null">
+        NVL = #{nvl,jdbcType=VARCHAR},
+      </if>
+      <if test="date != null">
+        `date` = #{date,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.user.model.FundNvl">
+    <!--@mbg.generated-->
+    update fund_nvl
+    set fund = #{fund,jdbcType=VARCHAR},
+      NVL = #{nvl,jdbcType=VARCHAR},
+      `date` = #{date,jdbcType=DATE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

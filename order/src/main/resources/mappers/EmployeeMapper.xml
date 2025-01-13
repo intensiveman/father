@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.order.mapper.EmployeeMapper">
+  <resultMap id="BaseResultMap" type="com.example.order.model.Employee">
+    <!--@mbg.generated-->
+    <!--@Table employee-->
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="workno" jdbcType="VARCHAR" property="workno" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="gender" jdbcType="CHAR" property="gender" />
+    <result column="age" jdbcType="TINYINT" property="age" />
+    <result column="idcard" jdbcType="CHAR" property="idcard" />
+    <result column="entrydate" jdbcType="DATE" property="entrydate" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, workno, `name`, gender, age, idcard, entrydate
+  </sql>
+  <insert id="insert" parameterType="com.example.order.model.Employee">
+    <!--@mbg.generated-->
+    insert into employee (id, workno, `name`, 
+      gender, age, idcard, entrydate
+      )
+    values (#{id,jdbcType=INTEGER}, #{workno,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{gender,jdbcType=CHAR}, #{age,jdbcType=TINYINT}, #{idcard,jdbcType=CHAR}, #{entrydate,jdbcType=DATE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.order.model.Employee">
+    <!--@mbg.generated-->
+    insert into employee
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="workno != null">
+        workno,
+      </if>
+      <if test="name != null">
+        `name`,
+      </if>
+      <if test="gender != null">
+        gender,
+      </if>
+      <if test="age != null">
+        age,
+      </if>
+      <if test="idcard != null">
+        idcard,
+      </if>
+      <if test="entrydate != null">
+        entrydate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="workno != null">
+        #{workno,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        #{gender,jdbcType=CHAR},
+      </if>
+      <if test="age != null">
+        #{age,jdbcType=TINYINT},
+      </if>
+      <if test="idcard != null">
+        #{idcard,jdbcType=CHAR},
+      </if>
+      <if test="entrydate != null">
+        #{entrydate,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+</mapper>
