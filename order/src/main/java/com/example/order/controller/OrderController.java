@@ -28,4 +28,10 @@ public class OrderController {
         return fundNvlMapper.selectByPrimaryKey(1).toString();
     }
 
+    @RequestMapping("/helloMerge")
+    public String helloMerge() {
+        System.out.println("helloMerge");
+        return fundNvlMapper.selectByPrimaryKey(1).toString();
+    }
+
 }
