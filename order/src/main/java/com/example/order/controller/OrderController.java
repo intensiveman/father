@@ -22,4 +22,10 @@ public class OrderController {
         return fundNvlMapper.selectByPrimaryKey(1).toString();
     }
 
+    @RequestMapping("/helloDev")
+    public String helloDev() {
+        System.out.println("hello");
+        return fundNvlMapper.selectByPrimaryKey(1).toString();
+    }
+
 }
