@@ -33,7 +33,7 @@ public class OrderController {
 
     @RequestMapping("/helloMerge")
     public String helloMerge() {
-        System.out.println("helloMerge");
+        System.out.println("helloMergeDev");
         return fundNvlMapper.selectByPrimaryKey(1).toString();
     }
 
