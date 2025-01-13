@@ -37,6 +37,10 @@ public class OrderController {
         System.out.println("888");
         System.out.println("888");
         System.out.println("888");
+        System.out.println("888");
+        System.out.println("888");
+        System.out.println("888");
+        System.out.println("888");
         return fundNvlMapper.selectByPrimaryKey(1).toString();
     }
 
