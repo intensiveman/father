@@ -25,6 +25,9 @@ public class OrderController {
     @RequestMapping("/helloDev")
     public String helloDev() {
         System.out.println("hello");
+        System.out.println("hello");
+        System.out.println("hello");
+        System.out.println("hello");
         return fundNvlMapper.selectByPrimaryKey(1).toString();
     }
 
