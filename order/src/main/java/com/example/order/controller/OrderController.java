@@ -35,6 +35,8 @@ public class OrderController {
     public String helloMerge() {
         System.out.println("777");
         System.out.println("888");
+        System.out.println("888");
+        System.out.println("888");
         return fundNvlMapper.selectByPrimaryKey(1).toString();
     }
 
