@@ -30,9 +30,15 @@ class OrderApplicationTests {
     void contextLoads() {
         String queueName = "simple.queue";
         String msg = "hello,amqp";
-        rabbitTemplate.convertAndSend("topic","china.1", "1");
-        rabbitTemplate.convertAndSend("topic","china.2", "2");
-        rabbitTemplate.convertAndSend("topic","japan.1", "1");
+        rabbitTemplate.convertAndSend("fanout","china.1", "fanout交换机测试");
+
+    }
+
+    @Test
+    void contextLoads2() {
+        String queueName = "simple.queue2";
+        String msg = "hello,amqp";
+        rabbitTemplate.convertAndSend(queueName,"hello2");
     }
 
     @Test

@@ -2,36 +2,32 @@ spring:
   application:
     name: user
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://47.120.67.119/flower?useSSL=false&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://14.103.203.44/communicationOfStudy?useSSL=false&serverTimezone=UTC
     username: root
     password: wd199604070010!
-  data:
-    redis:
-      host: 47.120.67.119
-      port: 6379
-      password: wd199604070010!
+  redis:
+    host: 14.103.203.44
+    port: 6379
+    password: wd199604070010!
   rabbitmq:
-    host: 47.120.67.119
+    host: 14.103.203.44
     port: 5672
-    username: admin
-    password: admin
-    virtual-host: my_vhost
-    listener:
-      simple:
-        prefetch: 1
+    username: dev
+    password: wd199604070010!
+    virtual-host: VirtualHost
 server:
   port: 8081
 
-mybatis:
+
+mybatis-plus:
   configuration:
-    #日志等级
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-    #驼峰命名与下划线自动匹配
-    map-underscore-to-camel-case: true
-  mapper-locations: classpath:mappers/*xml
-  type-aliases-package: com.example.order.model
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:10086/eureka/
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  # 日志实现类
+    map-underscore-to-camel-case: true  # 开启驼峰命名转换
+    cache-enabled: true  # 开启二级缓存
+  mapper-locations: classpath*:mapper/*.xml  # Mapper XML 文件路径
+  type-aliases-package: com.example.user.entity  # 实体类包路径
+
+api:
+  key:
+    971b8ff2-02d7-4ed5-9d39-67c0955e55c4

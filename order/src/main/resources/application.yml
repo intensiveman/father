@@ -3,12 +3,12 @@ spring:
     name: order
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://47.120.67.119/flower?useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://14.103.203.44/flower?useSSL=false&serverTimezone=UTC
     username: root
     password: wd199604070010!
 
   redis:
-    host: 47.120.67.119
+    host: 14.103.203.44
     port: 6379
     password: wd199604070010!
     lettuce:
@@ -18,11 +18,11 @@ spring:
         min-idle: 0
         max-wait: 100
   rabbitmq:
-    host: 47.120.67.119
+    host: 14.103.203.44
     port: 5672
-    username: admin
-    password: admin
-    virtual-host: my_vhost
+    username: dev
+    password: wd199604070010!
+    virtual-host: VirtualHost
 server:
   port: 8080
 
@@ -34,7 +34,3 @@ mybatis:
     map-underscore-to-camel-case: true
   mapper-locations: classpath:mappers/*xml
   type-aliases-package: com.example.order.model
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:10086/eureka/
